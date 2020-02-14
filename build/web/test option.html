@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testPage</title>
+	<style type="text/css">
+		.labl {
+    display : block;
+    width: 400px;
+}
+.labl > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+.labl > input + div{ /* DIV STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    background-color: #ffd6bb;
+    border: 1px solid #ff6600;
+}
+	</style>
+</head>
+<body>
+<label class="labl">
+    <input type="radio" name="radioname" value="one_value" />
+    <div>Small</div>
+</label>
+<label class="labl">
+    <input type="radio" name="radioname" value="another" />
+    <div>Small</div>
+</label>
+</body>
+</html>

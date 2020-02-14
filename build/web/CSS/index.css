@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 16, 2020, 11:24:09 AM
+    Author     : Victor
+*/
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+}
+.mBody{
+
+}
+#fbutton{
+	color: white;
+	width: 30%;
+	padding: 5px;
+	border:1px;
+	border-style: solid;
+	border-radius: 4px;
+	background: rgba(255,255,255,.1);
+
+}
+#fButton:hover {
+	background-color: rgba(255,255,255,.2);
+}
+#fButton:action {
+	background-color: rgba(255,255,255,.3);
+}
