@@ -1,5 +1,7 @@
-package com.victor;
+package DB;
 
+import com.victor.Questions;
+import com.victor.Topic;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,14 +20,14 @@ import javax.servlet.http.Cookie;
  *
  * @author VictorMiles@14feb.lol
  */
-public class Connectiondb {
+public class ConnectionDB {
 
     static Connection con = null;
     static PreparedStatement ps = null;
     static Statement st = null;
     static ResultSet rs = null;
 
-    public Connectiondb() throws ClassNotFoundException, SQLException {
+    public ConnectionDB() throws ClassNotFoundException, SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("driver lol");
@@ -67,5 +69,37 @@ public class Connectiondb {
             System.out.print(e);
         }
         return Ques;
+    }
+    public Topic[] getTopicsAndTypes(){
+        Topic[] topicsTypes;
+        ArrayList<Topic> tempTopics=new ArrayList<>();
+        try{
+            rs=st.executeQuery("select * from TopicTypes");
+            while(rs.next()){
+                String type = rs.getString(1);
+                tempTopics.add(new Topic(type, getTopic(type)));
+            }
+        }
+        catch(SQLException e){
+        System.out.print(e);
+        }
+        topicsTypes=new Topic[tempTopics.size()];
+        topicsTypes=tempTopics.toArray(topicsTypes);
+        return topicsTypes;
+    }
+    public String[] getTopic(String type){
+        ArrayList<String> allTopic=new ArrayList<>();
+        try{
+            rs=st.executeQuery("select * from "+type);
+            while(rs.next()){
+                allTopic.add(rs.getString(1));
+            }
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        String[] topicArray=new String[allTopic.size()];
+        topicArray= allTopic.toArray(topicArray);
+        return topicArray;
     }
 }
