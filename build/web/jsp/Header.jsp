@@ -7,9 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<html>
 <head>
-    <style type="text/css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Header.css">
+    <%-- <style type="text/css">
         body{
             margin: 0px;
             padding: 0px;
@@ -29,7 +29,7 @@
             margin-left: 10px;
             height: 50px;
         }
-    </style>
+    </style> --%>
 </head>
 <body>
 <header class="Header-nav">

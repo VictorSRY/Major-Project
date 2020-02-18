@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 18, 2020, 11:04:53 PM
+    Author     : Victor
+*/
+.front{
+                box-sizing: border-box;
+                display: inline-block;
+            }
+            .Qpaper{
+                display: inline-block;
+                float: left;
+                width: auto;
+                margin: 10px;
+            }
+            .Qid{
+                all:none;
+                background: rgba(200,200,200,1);
+                padding: 5px;
+            }
+            .question{
+                background-color: rgba(200,200,200,.2);
+                padding: 10px;
+            }
+            .choiceLabl {
+                display : block;
+                width: auto;
+                padding-left: 5px;
+            }
+            .choiceLabl > input{ /* HIDE RADIO */
+                visibility: hidden; /* Makes input not-clickable */
+                position: absolute; /* Remove input from document flow */
+            }
+            .choiceLabl > input + div{ /* DIV STYLES */
+                cursor:pointer;
+                border:2px solid transparent;
+            }
+            .choiceLabl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+                background-color: #ffd6bb;
+                border: 1px solid #ff6600;
+            }
+            .choice{
+                padding: 5px;
+                margin: 10px;
+            }
+            .choiceId{
+
+                display : block;
+                float: left;
+                padding: 5px;
+                margin: 10px;
+            }
+            .choiceBlock{
+                padding: 10px;
+                width: 100%;
+                position: relative;
+            }

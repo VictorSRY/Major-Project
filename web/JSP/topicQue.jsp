@@ -1,9 +1,10 @@
 <%-- 
-    Document   : topicjsp
+    Document   : topicQue
     Created on : Feb 6, 2020, 12:13:48 PM
     Author     : Victor
 --%>
 
+<%@page import="DB.ConnectionDB"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.victor.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,7 +13,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>test Page</title>
-        <style type="text/css">
+        <link rel="stylesheet" type="text/css" href="../CSS/topicQue.css">
+        <%-- <style type="text/css">
             .front{
                 box-sizing: border-box;
                 display: inline-block;
@@ -64,16 +66,14 @@
                 padding: 10px;
                 width: 100%;
                 position: relative;
-            }
+            } --%>
         </style>
     </head>
     <body>
-        <%@include file="Header.jsp" %>
         <div class="front">
-            <%@include file="SideNab.jsp"%>
             <div class="QPaper">
                 <%
-                    Connectiondb cq = new Connectiondb();
+                    ConnectionDB cq = new ConnectionDB();
                     ArrayList<Questions> qList = cq.getQues("average");
                     /*pass topic*/
                     int limit = qList.size();
@@ -133,8 +133,8 @@
             </div>
         </div>
         <button onclick="checkAns(10)">Check</button>
-        <script type="text/javascript">
-            x = document.cookie
+        <script src="../JavaScript/topicQue.js"><%--
+            x = document.cookie;
             /*for (var i = x.length - 1; i >= 0; i--) {
              console.log(x[i]);
              }*/
@@ -146,7 +146,7 @@
             for (var i = 0; i <= x.length - 1; i++) {
                 c = String(x[i]);
                 /*console.log(c);*/
-                if (c == ';') {
+                if (c === ';') {
                     /*console.log(c);*/
                     var arry = str.split("=");
                     var a = arry[0];
@@ -192,6 +192,6 @@
                 }
             }
             /*console.log(dic);*/
-        </script>
+        --%></script>
     </body>
 </html>

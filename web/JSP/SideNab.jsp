@@ -1,5 +1,5 @@
 <%-- 
-    Document   : sidetab
+    Document   : SideNab
     Created on : Feb 14, 2020, 7:18:51 PM
     Author     : Victor
 --%>
@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <style type="text/css">
+        <link rel="stylesheet" type="text/css" href="../CSS/SideNab.css">
+        <%-- <style type="text/css">
             *{
                 margin: 0px;
                 padding: 0px;
@@ -66,7 +67,7 @@
             #PTbutton{
                 padding: 0px;
             }
-        </style>
+        </style>--%>
     </head>
     <body >
         <nav class="tabBody">
@@ -98,7 +99,7 @@
                 </li>
             </ul>
         </nav>
-        <script type="text/javascript">
+        <script src="../JavaScript/SideNab.js"><%--
             var f=true;
             function PTButtonDrop(){
                 var obj=document.getElementById("PTbutton");
@@ -117,7 +118,7 @@
                     obj.removeChild(document.getElementById("PTlist"));
                     /*obj.innerAdjacenthtml("PT","<ul><li>Topics</li><li>Prectic Paper</li></ul>");*/
                 }
-            }
-        </script>
+            } 
+        --%></script>
     </body>
 </html>
