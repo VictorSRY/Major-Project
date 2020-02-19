@@ -8,8 +8,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="../CSS/SideNab.css">
         <%-- <style type="text/css">
             *{
                 margin: 0px;
@@ -70,7 +68,7 @@
         </style>--%>
     </head>
     <body >
-        <nav class="tabBody">
+        <nav class="NabBody">
             <ul>
                 <li style="font-size: 15px; color: rgba(0,0,0,.6); padding: 5px;">STUDENT</li>
                 <li>
@@ -119,6 +117,6 @@
                     /*obj.innerAdjacenthtml("PT","<ul><li>Topics</li><li>Prectic Paper</li></ul>");*/
                 }
             } 
-        --%></script>
+            --%></script>
     </body>
 </html>

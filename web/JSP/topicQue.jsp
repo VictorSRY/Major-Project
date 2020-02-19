@@ -6,14 +6,11 @@
 
 <%@page import="DB.ConnectionDB"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.victor.*"%>
+<%@page import="com.victorObj.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>test Page</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/topicQue.css">
         <%-- <style type="text/css">
             .front{
                 box-sizing: border-box;
@@ -67,131 +64,129 @@
                 width: 100%;
                 position: relative;
             } --%>
-        </style>
-    </head>
-    <body>
-        <div class="front">
-            <div class="QPaper">
-                <%
-                    ConnectionDB cq = new ConnectionDB();
-                    ArrayList<Questions> qList = cq.getQues("average");
-                    /*pass topic*/
-                    int limit = qList.size();
-                    Cookie c[] = new Cookie[limit];
-                    /*for(Question q:qList){*/
-                    for (int i = 0; i < limit; i++) {
-                        Questions q = qList.get(i);
-                        String qn = Integer.toString(i + 1);
-                        c[i] = new Cookie("Q" + qn, q.getAns());
-                %>
-                <div class="Qid">
-                    Q<%=(i + 1)%>.
-                    <%-- print value of i+1 --%>
-                </div>
-                <div class="question" id="Q<%=(i + 1)%>">
-                    <%=q.getQuestion()%><%-- print Question of current object--%>
-                    <div class="choices">
-                        <div class="choiceBlock">
-                            <%int temp = 1;%>
-                            <div id="QNO<%=temp%>" class="choiceId">A.</div>
-                            <label class="choiceLabl">
-                                <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="a">
-                                <div class="choice">
-                                    <%=q.getA()%>
-                                </div><%-- print first choice of current object--%>
-                            </label>
-                        </div>
-                        <div id="QNO<%=temp%>" class="choiceId">B.</div>
-                        <label class="choiceLabl">
-                            <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="b">
-                            <div class="choice">
-                                <%=q.getB()%>
-                            </div><%-- print second choice of current object--%>
-                        </label>
-                        <div id="QNO<%=temp%>" class="choiceId">C.</div>
-                        <label class="choiceLabl">
-                            <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>"value="c">
-                            <div class="choice">
-                                <%=q.getC()%>
-                            </div><%-- print third choice of current object--%>
-                        </label>
-                        <br>
-                        <div id="QNO<%=temp%>" class="choiceId">D.</div>
-                        <label class="choiceLabl">
-                            <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp%>"value="d">
-                            <div class="choice">
-                                <%=q.getD()%>
-                            </div><%-- print fourth choice of current object--%>
-                        </label>
-                        <br>
-                    </div>
-                </div> 
-                <%
-                        response.addCookie(c[i]);
-                    }
-                %>
-            </div>
+    </style>
+</head>
+<body>
+    <div class="QPaper">
+        <%
+            ConnectionDB cq = new ConnectionDB();
+            Questions[] quesList = cq.getQues("average");
+            /*pass topic*/
+            int limit = quesList.length;
+            Cookie c[] = new Cookie[limit];
+            /*for(Question q:quesList){*/
+            for (int i = 0; i < limit; i++) {
+                Questions q = quesList[i];
+                String qn = Integer.toString(i + 1);
+                c[i] = new Cookie("Q" + qn, q.getAns());
+        %>
+        <div class="Qid">
+            Q<%=(i + 1)%>.
+            <%-- print value of i+1 --%>
         </div>
-        <button onclick="checkAns(10)">Check</button>
-        <script src="../JavaScript/topicQue.js"><%--
-            x = document.cookie;
-            /*for (var i = x.length - 1; i >= 0; i--) {
-             console.log(x[i]);
-             }*/
-            /*console.log(x.length);*/
-            var j = 0;
-            var str = "";
-            var obj = {};
-            /*console.log(typeof x[0]);*/
-            for (var i = 0; i <= x.length - 1; i++) {
-                c = String(x[i]);
-                /*console.log(c);*/
-                if (c === ';') {
-                    /*console.log(c);*/
-                    var arry = str.split("=");
-                    var a = arry[0];
-                    var b = arry[1];
-                    obj[a] = b;
-                    str = "";
-                    j++;
-                } else {
-                    str = str + c;
-                    /*console.log(i+" "+str);*/
-                }
+        <div class="question" id="Q<%=(i + 1)%>">
+            <%=q.getQuestion()%><%-- print Question of current object--%>
+            <br>
+            <br>
+            <div class="choices">
+                    <%int temp = 1;%>
+                    <div class="choiceBlock">
+                    <div id="QNO<%=temp%>" class="choiceId">A.</div>
+                    <label class="choiceLabl">
+                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="a">
+                        <div class="choice">
+                            <%=q.getA()%>
+                        </div><%-- print first choice of current object--%>
+                    </label>
+                    </div>
+                    <div id="QNO<%=temp%>" class="choiceId">B.</div>
+                    <label class="choiceLabl">
+                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="b">
+                        <div class="choice">
+                            <%=q.getB()%>
+                        </div><%-- print second choice of current object--%>
+                    </label>
+                    <div id="QNO<%=temp%>" class="choiceId">C.</div>
+                    <label class="choiceLabl">
+                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>"value="c">
+                        <div class="choice">
+                            <%=q.getC()%>
+                        </div><%-- print third choice of current object--%>
+                    </label>
+                    <div id="QNO<%=temp%>" class="choiceId">D.</div>
+                    <label class="choiceLabl">
+                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp%>"value="d">
+                        <div class="choice">
+                            <%=q.getD()%>
+                        </div><%-- print fourth choice of current object--%>
+                    </label>
+            </div>
+        </div> 
+        <%
+                response.addCookie(c[i]);
             }
-            /*console.log(obj);*/
-            function checkAns(x) {
-                for (var i = 0; i < x; i++) {
-                    var radio = "R" + (i + 1);
-                    console.log("checking Q" + (i + 1));
-                    var temp = document.getElementsByName(radio);
-                    /*console.log(temp);*/
-                    var tempAns;
-                    var f = false;
-                    for (var j = 0; j < 4; j++) {
-                        var tempCheck = temp[j];
-                        console.log(tempCheck);
-                        console.log(tempCheck.checked);
-                        if (tempCheck.checked) {
-                            tempAns = tempCheck.value;
-                            console.log(obj["Q" + (i + 1)] + " " + (tempAns === obj["Q" + (i + 1)]) + " " + tempAns + " lol");
-                            if (tempAns === obj["Q" + (i + 1)]) {
-                                f = true;
-                                var tempobj = document.getElementById("Q" + (i + 1));
-                                tempobj.style.color = "green";
-                                tempobj.style.background = "red";
-                            }
+        %>
+    </div>
+    <button onclick="checkAns(10)">Check</button>
+    <script src="../JavaScript/topicQue.js"><%--
+        x = document.cookie;
+        /*for (var i = x.length - 1; i >= 0; i--) {
+         console.log(x[i]);
+         }*/
+        /*console.log(x.length);*/
+        var j = 0;
+        var str = "";
+        var obj = {};
+        /*console.log(typeof x[0]);*/
+        for (var i = 0; i <= x.length - 1; i++) {
+            c = String(x[i]);
+            /*console.log(c);*/
+            if (c === ';') {
+                /*console.log(c);*/
+                var arry = str.split("=");
+                var a = arry[0];
+                var b = arry[1];
+                obj[a] = b;
+                str = "";
+                j++;
+            } else {
+                str = str + c;
+                /*console.log(i+" "+str);*/
+            }
+        }
+        /*console.log(obj);*/
+        function checkAns(x) {
+            for (var i = 0; i < x; i++) {
+                var radio = "R" + (i + 1);
+                console.log("checking Q" + (i + 1));
+                var temp = document.getElementsByName(radio);
+                /*console.log(temp);*/
+                var tempAns;
+                var f = false;
+                for (var j = 0; j < 4; j++) {
+                    var tempCheck = temp[j];
+                    console.log(tempCheck);
+                    console.log(tempCheck.checked);
+                    if (tempCheck.checked) {
+                        tempAns = tempCheck.value;
+                        console.log(obj["Q" + (i + 1)] + " " + (tempAns === obj["Q" + (i + 1)]) + " " + tempAns + " lol");
+                        if (tempAns === obj["Q" + (i + 1)]) {
+                            f = true;
+                            var tempobj = document.getElementById("Q" + (i + 1));
+                            tempobj.style.color = "green";
+                            tempobj.style.background = "red";
                         }
-                        if (f) {
-                            console.log("right");
-                            f = false;
-                        } else {
-                            console.log("wrong");
-                        }
+                    }
+                    if (f) {
+                        console.log("right");
+                        f = false;
+                    } else {
+                        console.log("wrong");
                     }
                 }
             }
-            /*console.log(dic);*/
+        }
+        /*console.log(dic);*/
         --%></script>
-    </body>
+</body>
 </html>

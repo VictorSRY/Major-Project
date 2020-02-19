@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="DB.ConnectionDB"%>
-<%@page import="com.victor.*"%>
+<%@page import="com.victorObj.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
     <body>
         <div class="SelectTopic">
             <h1>Select Topic</h1>
-            <div class="Aptitude">
+            <div class="topicsTypes">
                 <%
                     ConnectionDB db = new ConnectionDB();
                     Topic[] tAT = db.getTopicsAndTypes();

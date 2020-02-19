@@ -8,54 +8,53 @@ and open the template in the editor.
     Author     : Victor
 */
 .front{
-                box-sizing: border-box;
-                display: inline-block;
-            }
-            .Qpaper{
-                display: inline-block;
-                float: left;
-                width: auto;
-                margin: 10px;
-            }
-            .Qid{
-                all:none;
-                background: rgba(200,200,200,1);
-                padding: 5px;
-            }
-            .question{
-                background-color: rgba(200,200,200,.2);
-                padding: 10px;
-            }
-            .choiceLabl {
-                display : block;
-                width: auto;
-                padding-left: 5px;
-            }
-            .choiceLabl > input{ /* HIDE RADIO */
-                visibility: hidden; /* Makes input not-clickable */
-                position: absolute; /* Remove input from document flow */
-            }
-            .choiceLabl > input + div{ /* DIV STYLES */
-                cursor:pointer;
-                border:2px solid transparent;
-            }
-            .choiceLabl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
-                background-color: #ffd6bb;
-                border: 1px solid #ff6600;
-            }
-            .choice{
-                padding: 5px;
-                margin: 10px;
-            }
-            .choiceId{
-
-                display : block;
-                float: left;
-                padding: 5px;
-                margin: 10px;
-            }
-            .choiceBlock{
-                padding: 10px;
-                width: 100%;
-                position: relative;
-            }
+    box-sizing: border-box;
+    display: inline-block;
+}
+.QPaper{
+    display: inline-block;
+    float: left;
+    width: 60%;
+    margin-left:  17.8%;
+    margin-top: 70px; 
+}
+.Qid{
+    all:none;
+    background: rgba(200,200,200,1);
+    padding: 5px;
+}
+.question{
+    background-color: rgba(200,200,200,.2);
+    padding: 10px;
+}
+.choiceLabl {
+    display : block;
+}
+.choiceLabl > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+.choiceLabl > input + div{ /* DIV STYLES */
+    cursor:pointer;
+    border:1px solid transparent;
+}
+.choiceLabl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    background-color: #ffd6bb;
+    border: 1px solid #ff6600;
+}
+.choice{
+    padding: 10px;
+    margin-left: 40px;
+    border-radius:12px;
+    box-shadow:inset 0px 0px 2px;
+}
+.choiceId{
+    display : block;
+    float: left;
+    padding: 10px 11px;
+    border:1px solid black;
+    border-radius: 20px;
+}
+.choiceBlock{
+    margin-bottom: 5px;
+}

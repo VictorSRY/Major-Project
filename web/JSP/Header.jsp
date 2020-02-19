@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../CSS/Header.css">
+    
     <%-- <style type="text/css">
         body{
             margin: 0px;
@@ -34,7 +34,7 @@
 <body>
 <header class="Header-nav">
     <div class="logo">
-        <img style="max-height: 100%;" src="C:\Users\Lenovo\Google Drive\NetBeansProjects\majorPro\web\Images\CA_icon.png">
+        <img style="max-height: 100%;" src="..\Images\CA_icon.png">
     </div>
 </header>
 </body>
