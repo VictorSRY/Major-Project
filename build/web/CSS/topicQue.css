@@ -5,7 +5,7 @@ and open the template in the editor.
 */
 /* 
     Created on : Feb 18, 2020, 11:04:53 PM
-    Author     : Victor
+    Author     : SRVictorY
 */
 .front{
     box-sizing: border-box;
@@ -15,6 +15,7 @@ and open the template in the editor.
     display: inline-block;
     float: left;
     width: 60%;
+    min-width: 565px;
     margin-left:  17.8%;
     margin-top: 70px; 
 }
@@ -39,22 +40,30 @@ and open the template in the editor.
     border:1px solid transparent;
 }
 .choiceLabl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
-    background-color: #ffd6bb;
-    border: 1px solid #ff6600;
+    /*background-color: #ffd6bb;*/
+    border: 1px solid #178acc;
+    box-shadow:inset 0px 0px 5px 2px #178acc75;
+
 }
 .choice{
     padding: 10px;
-    margin-left: 40px;
+    margin-left: 45px;
     border-radius:12px;
     box-shadow:inset 0px 0px 2px;
 }
 .choiceId{
-    display : block;
+    text-align: center;
+    display : inline-block;
     float: left;
-    padding: 10px 11px;
-    border:1px solid black;
+    padding: 9px 9px 8px 12px;
+    margin-top:2px;
+    /*border:1px solid black;*/
+    box-shadow:inset 0px 0px 2px;
     border-radius: 20px;
 }
 .choiceBlock{
     margin-bottom: 5px;
+}
+.checkbutton{
+    float: none;
 }

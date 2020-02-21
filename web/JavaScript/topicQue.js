@@ -46,9 +46,9 @@ x = document.cookie;
                             console.log(obj["Q" + (i + 1)] + " " + (tempAns === obj["Q" + (i + 1)]) + " " + tempAns + " lol");
                             if (tempAns === obj["Q" + (i + 1)]) {
                                 f = true;
-                                var tempobj = document.getElementById("Q" + (i + 1));
-                                tempobj.style.color = "green";
-                                tempobj.style.background = "red";
+                                var tempobj = document.getElementByClass("Q" + (i + 1)+"Ans");
+                                tempobj.style.boxShadow="inset 0px 0px 5px 2px #ff1d1d";
+                                tempobj.style.border= "1px solid #ff1d1d";
                             }
                         }
                         if (f) {

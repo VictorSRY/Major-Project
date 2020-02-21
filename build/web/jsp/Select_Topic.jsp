@@ -33,7 +33,7 @@
                         for (int j = 0; j < tempSize; j++) {
                     %>
                     <li>
-                        <%=topics[j]%>
+                        <button class="topicButton"><%=topics[j]%></button>
                     </li>
                     <%
                             }

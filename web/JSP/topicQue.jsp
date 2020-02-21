@@ -4,6 +4,7 @@
     Author     : Victor
 --%>
 
+<%@page import="org.apache.catalina.Session"%>
 <%@page import="DB.ConnectionDB"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.victorObj.*"%>
@@ -11,6 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="../CSS/topicQue.css">
         <%-- <style type="text/css">
             .front{
                 box-sizing: border-box;
@@ -69,8 +71,9 @@
 <body>
     <div class="QPaper">
         <%
+            /*String topic =session.getAttribute("topic").toString();*/
             ConnectionDB cq = new ConnectionDB();
-            Questions[] quesList = cq.getQues("average");
+            Questions[] quesList = cq.getQues("average"/* topic */);
             /*pass topic*/
             int limit = quesList.length;
             Cookie c[] = new Cookie[limit];
@@ -91,7 +94,7 @@
             <div class="choices">
                     <%int temp = 1;%>
                     <div class="choiceBlock">
-                    <div id="QNO<%=temp%>" class="choiceId">A.</div>
+                    <div id="Q<%=temp%>Ans" class="choiceId">A.</div>
                     <label class="choiceLabl">
                         <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="a">
                         <div class="choice">
@@ -99,27 +102,33 @@
                         </div><%-- print first choice of current object--%>
                     </label>
                     </div>
-                    <div id="QNO<%=temp%>" class="choiceId">B.</div>
+                    <div class="choiceBlock">
+                    <div id="Q<%=temp%>Ans" class="choiceId">B.</div>
                     <label class="choiceLabl">
                         <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="b">
                         <div class="choice">
                             <%=q.getB()%>
                         </div><%-- print second choice of current object--%>
                     </label>
-                    <div id="QNO<%=temp%>" class="choiceId">C.</div>
+                    </div>
+                    <div class="choiceBlock">
+                    <div id="Q<%=temp%>Ans" class="choiceId">C.</div>
                     <label class="choiceLabl">
                         <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>"value="c">
                         <div class="choice">
                             <%=q.getC()%>
                         </div><%-- print third choice of current object--%>
                     </label>
-                    <div id="QNO<%=temp%>" class="choiceId">D.</div>
+                    </div>
+                    <div class="choiceBlock">
+                    <div id="Q<%=temp%>Ans" class="choiceId">D.</div>
                     <label class="choiceLabl">
                         <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp%>"value="d">
                         <div class="choice">
                             <%=q.getD()%>
                         </div><%-- print fourth choice of current object--%>
                     </label>
+                    </div>
             </div>
         </div> 
         <%
@@ -127,7 +136,7 @@
             }
         %>
     </div>
-    <button onclick="checkAns(10)">Check</button>
+    <button class="checkbutton" onclick="checkAns(10)">Check</button>
     <script src="../JavaScript/topicQue.js"><%--
         x = document.cookie;
         /*for (var i = x.length - 1; i >= 0; i--) {
