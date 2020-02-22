@@ -5,14 +5,14 @@ and open the template in the editor.
 */
 /* 
     Created on : Feb 18, 2020, 11:04:53 PM
-    Author     : SRVictorY
+    Author     : SRY
 */
 .front{
     box-sizing: border-box;
-    display: inline-block;
+    display: block;
 }
 .QPaper{
-    display: inline-block;
+    display: block;
     float: left;
     width: 60%;
     min-width: 565px;
@@ -35,15 +35,23 @@ and open the template in the editor.
     visibility: hidden; /* Makes input not-clickable */
     position: absolute; /* Remove input from document flow */
 }
-.choiceLabl > input + div{ /* DIV STYLES */
+.choiceLabl > input + .choice{ /* DIV STYLES */
     cursor:pointer;
     border:1px solid transparent;
 }
-.choiceLabl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+.choiceLabl > input:checked + .choice{ /* (RADIO CHECKED) DIV STYLES */
     /*background-color: #ffd6bb;*/
     border: 1px solid #178acc;
     box-shadow:inset 0px 0px 5px 2px #178acc75;
 
+}
+.right{
+    border: 1px solid #2bd231 !important;
+    box-shadow:  inset 0px 0px 5px 2px #2bd231 !important;
+}
+.wrong{
+    border: 1px solid #ff1d1d !important;
+    box-shadow:  inset 0px 0px 5px 2px #ff1d1d !important;
 }
 .choice{
     padding: 10px;

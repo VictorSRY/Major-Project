@@ -1,7 +1,7 @@
 <%-- 
     Document   : mock
     Created on : Feb 19, 2020, 2:00:45 AM
-    Author     : Victor
+    Author     : SRY
 --%>
 <%@page import="com.victorObj.Questions"%>
 <%@page import="DB.ConnectionDB"%>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : topicQue
     Created on : Feb 6, 2020, 12:13:48 PM
-    Author     : Victor
+    Author     : Sry
 --%>
 
 <%@page import="org.apache.catalina.Session"%>
@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../CSS/topicQue.css">
+        <%@include file="CSS.jsp" %>
         <%-- <style type="text/css">
             .front{
                 box-sizing: border-box;
@@ -92,38 +92,37 @@
             <br>
             <br>
             <div class="choices">
-                    <%int temp = 1;%>
                     <div class="choiceBlock">
-                    <div id="Q<%=temp%>Ans" class="choiceId">A.</div>
+                    <div class="choiceId Q<%=(i+1)%>Ans">A.</div>
                     <label class="choiceLabl">
-                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="a">
+                        <input type="radio" name="R<%=(i + 1)%>" class="choice_input" value="a">
                         <div class="choice">
                             <%=q.getA()%>
                         </div><%-- print first choice of current object--%>
                     </label>
                     </div>
                     <div class="choiceBlock">
-                    <div id="Q<%=temp%>Ans" class="choiceId">B.</div>
+                    <div class="choiceId Q<%=(i+1)%>Ans">B.</div>
                     <label class="choiceLabl">
-                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>" value="b">
+                        <input type="radio" name="R<%=(i + 1)%>" class="choice_input" value="b">
                         <div class="choice">
                             <%=q.getB()%>
                         </div><%-- print second choice of current object--%>
                     </label>
                     </div>
                     <div class="choiceBlock">
-                    <div id="Q<%=temp%>Ans" class="choiceId">C.</div>
+                    <div class="choiceId Q<%=(i+1)%>Ans">C.</div>
                     <label class="choiceLabl">
-                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp++%>"value="c">
+                        <input type="radio" name="R<%=(i + 1)%>" class="choice_input" value="c">
                         <div class="choice">
                             <%=q.getC()%>
                         </div><%-- print third choice of current object--%>
                     </label>
                     </div>
                     <div class="choiceBlock">
-                    <div id="Q<%=temp%>Ans" class="choiceId">D.</div>
+                    <div class="choiceId Q<%=(i+1)%>Ans">D.</div>
                     <label class="choiceLabl">
-                        <input type="radio" name="R<%=(i + 1)%>" id="QChoice<%=temp%>"value="d">
+                        <input type="radio" name="R<%=(i + 1)%>" class="choice_input" value="d">
                         <div class="choice">
                             <%=q.getD()%>
                         </div><%-- print fourth choice of current object--%>
@@ -136,8 +135,8 @@
             }
         %>
     </div>
-    <button class="checkbutton" onclick="checkAns(10)">Check</button>
-    <script src="../JavaScript/topicQue.js"><%--
+    <button id="checkbutton">Check</button>
+    <script src="../JavaScript/maayur.js"><%--
         x = document.cookie;
         /*for (var i = x.length - 1; i >= 0; i--) {
          console.log(x[i]);

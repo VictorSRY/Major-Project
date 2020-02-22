@@ -32,30 +32,30 @@ x = document.cookie;
             function checkAns(x) {
                 for (var i = 0; i < x; i++) {
                     var radio = "R" + (i + 1);
-                    console.log("checking Q" + (i + 1));
+                    /*console.log("checking Q" + (i + 1));*/
                     var temp = document.getElementsByName(radio);
                     /*console.log(temp);*/
                     var tempAns;
                     var f = false;
                     for (var j = 0; j < 4; j++) {
                         var tempCheck = temp[j];
-                        console.log(tempCheck);
-                        console.log(tempCheck.checked);
+                        /*console.log(tempCheck);
+                        console.log(tempCheck.checked);*/
                         if (tempCheck.checked) {
                             tempAns = tempCheck.value;
-                            console.log(obj["Q" + (i + 1)] + " " + (tempAns === obj["Q" + (i + 1)]) + " " + tempAns + " lol");
+                            /*console.log(obj["Q" + (i + 1)] + " " + (tempAns === obj["Q" + (i + 1)]) + " " + tempAns + " lol");*/
                             if (tempAns === obj["Q" + (i + 1)]) {
                                 f = true;
-                                var tempobj = document.getElementByClass("Q" + (i + 1)+"Ans");
+                                var tempobj = document.getElementsByClass("Q" + (i + 1) + "Ans");
                                 tempobj.style.boxShadow="inset 0px 0px 5px 2px #ff1d1d";
                                 tempobj.style.border= "1px solid #ff1d1d";
                             }
                         }
                         if (f) {
-                            console.log("right");
+                           /* console.log("right");*/
                             f = false;
                         } else {
-                            console.log("wrong");
+                           /* console.log("wrong");*/
                         }
                     }
                 }
