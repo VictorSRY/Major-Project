@@ -136,7 +136,7 @@
         %>
     </div>
     <button id="checkbutton">Check</button>
-    <script src="../JavaScript/maayur.js"><%--
+    <script src="../JavaScript/loltopicQue.js"><%--
         x = document.cookie;
         /*for (var i = x.length - 1; i >= 0; i--) {
          console.log(x[i]);

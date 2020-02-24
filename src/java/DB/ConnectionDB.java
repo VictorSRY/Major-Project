@@ -1,7 +1,8 @@
 package DB;
 
-import com.victorObj.Questions;
-import com.victorObj.Topic;
+import com.victor.Obj.Questions;
+import com.victor.Obj.Topic;
+import com.victor.Obj.TopicTypes;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.servlet.http.Cookie;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -72,56 +72,79 @@ public class ConnectionDB {
         return ques;
     }
 
-    public Topic[] getTopicsAndTypes() {
-        Topic[] topicsTypes;
-        ArrayList<Topic> tempTopics = new ArrayList<>();
+    public TopicTypes[] getTopicsAndTypes() {
+        TopicTypes[] topicsTypes;
+        ArrayList<TopicTypes> tempTopics = new ArrayList<>();
         try {
             rs = st.executeQuery("select * from TopicTypes");
             while (rs.next()) {
                 String type = rs.getString(1);
-                tempTopics.add(new Topic(type, getTopic(type)));
+                tempTopics.add(new TopicTypes(type, getTopic(type)));
             }
         } catch (SQLException e) {
             System.out.print(e);
         }
-        topicsTypes = new Topic[tempTopics.size()];
+        topicsTypes = new TopicTypes[tempTopics.size()];
         topicsTypes = tempTopics.toArray(topicsTypes);
         return topicsTypes;
     }
 
-    public String[] getTopic(String type) {
-        ArrayList<String> allTopic = new ArrayList<>();
+    public Topic[] getTopic(String type) {
+        ArrayList<Topic> allTopic = new ArrayList<>();
         try {
             rs = st.executeQuery("select * from " + type);
             while (rs.next()) {
-                allTopic.add(rs.getString(1));
+                allTopic.add(new Topic(rs.getString(1),rs.getInt(2)));
             }
         } catch (SQLException e) {
             System.out.print(e);
         }
-        String[] topicArray = new String[allTopic.size()];
+        Topic[] topicArray = new Topic[allTopic.size()];
         topicArray = allTopic.toArray(topicArray);
         return topicArray;
     }
 
-    public Questions[] getMock() {
+    public Questions[] getMock() throws SQLException {
         ArrayList<Questions> tempQues = new ArrayList<>();
         int qid;
         String question;
         String a, b, c, d, ans;
         boolean rand;
-        try {
-            Topic[] topics = this.getTopicsAndTypes();
+            TopicTypes[] topics = this.getTopicsAndTypes();
             int topicsSize = topics.length;
-            for (int i = 0; i < topicsSize; i++) {
-                String[] topicNames = topics[i].getTopics();
+            for (TopicTypes tt:topics) {
+                for (Topic t:tt.getTopics()){
+                    String name=t.getName();
+                    int wait=t.getWait();
+                    try{
+                        rs = st.executeQuery("SELECT * FROM " + name + " ORDER BY RAND() LIMIT " + wait);
+                        while(rs.next()){
+                            qid = rs.getInt("Qno");
+                            question = rs.getString("Question");
+                            a = rs.getString("a");
+                            b = rs.getString("b");
+                            c = rs.getString("c");
+                            d = rs.getString("d");
+                            ans = rs.getString("ans");
+                            rand = rs.getBoolean("rand");
+                            tempQues.add(new Questions(qid, question, a, b, c, d, ans, rand));
+                        }
+                    }
+                    catch(SQLException e){
+                        System.out.println(e);
+                    }
+                }
+            }
+                /*String[] topicNames = topics[i].getTopics();
                 int topicNamesSize = topicNames.length;
+                    
+        try {
                 for (int j = 0; j < topicNamesSize; j++) {
                     String topic = topicNames[i];
                     int wait = 0;
                     rs = st.executeQuery("SELECT wait FROM MockWait where mockTopic = " + topic);
                     while (rs.next()) {
-                        wait = rs.getInt(wait);
+                        wait = rs.getInt("wait");
                     }
                     rs = st.executeQuery("SELECT * FROM " + topic + " ORDER BY RAND() LIMIT " + wait);
                     while (rs.next()) {
@@ -140,8 +163,9 @@ public class ConnectionDB {
             }
         } catch (SQLException e) {
             System.out.print(e);
-        }
+        }*/
         Questions[] mockQues = new Questions[tempQues.size()];
+        mockQues=tempQues.toArray(mockQues);
         return mockQues;
     }
 }

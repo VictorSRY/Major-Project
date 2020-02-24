@@ -1,4 +1,4 @@
-package com.victorObj;
+package com.victor.Obj;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

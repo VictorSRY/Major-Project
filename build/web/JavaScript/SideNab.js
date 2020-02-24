@@ -17,7 +17,7 @@ function PTButtonDrop() {
         f = false;
         obj.style.background = "#2fa4e7";
         obj.style.color = "white";
-        obj.innerHTML += '<ul id="PTlist"><li style="margin:0px;"><a class="tabOptions tabOptionsSelect" href=".jsp">Topics</li></a><li><a class="tabOptions tabOptionsSelect" href=".jsp">Mock Test</a></li></ul>';
+        obj.innerHTML += '<ul id="PTlist"><li style="margin:0px;"><a class="tabOptions tabOptionsSelect" href=".jsp">Topics</li></a><li><a class="tabOptions tabOptionsSelect" href="MockTestPaper.jsp">Mock Test</a></li></ul>';
         /*obj.innerAdjacenthtml("PT","<ul><li>Topics</li><li>Prectic Paper</li></ul>");*/
     } else {
         f = true;

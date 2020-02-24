@@ -1,6 +1,6 @@
 <%-- 
-    Document   : TestQuesPage
-    Created on : Feb 18, 2020, 11:14:02 PM
+    Document   : MockTestPaper
+    Created on : Feb 24, 2020, 2:16:31 AM
     Author     : SRY
 --%>
 
@@ -9,16 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%=session.getAttribute("topic").toString()%> Test<!--LOL--></title>
+        <title>Mock Test</title>
         <%@include file="CSS.jsp" %>
     </head>
     <body>
         <%@include file="Header.jsp" %>
-        <%--<div class="front">--%>
-            <%@include file="SideNab.jsp"%>
-            <%@include file="topicQue.jsp"%>
-        <%--</div>--%>
+        <%@include file="SideNab.jsp"%>
+        <%@include file="mock.jsp"%>
     </body>
 </html>
-
-

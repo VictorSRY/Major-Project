@@ -1,7 +1,7 @@
 <%-- 
     Document   : TestQuesPage
     Created on : Feb 18, 2020, 11:14:02 PM
-    Author     : Lenovo
+    Author     : SRY
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>testLOL</title>
+        <title><%=session.getAttribute("topic").toString()%> Test<!--LOL--></title>
         <%@include file="CSS.jsp" %>
     </head>
     <body>

@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.victorObj;
+package com.victor.Obj;
 
 /**
  *
  * @author Victor
  */
-public class Topic {
+public class TopicTypes {
     String type;
-    String[] topics;
-    public Topic(String type,String[] topics){
+    Topic[] topics;
+    public TopicTypes(String type,Topic[] topics){
         setType(type);
         setTopics(topics);
     }
@@ -23,11 +23,11 @@ public class Topic {
     public String getType() {
         return type;
     }
-    private void setTopics(String[] topics) {
+    private void setTopics(Topic[] topics) {
         this.topics = topics;
     }
 
-    public String[] getTopics() {
+    public Topic[] getTopics() {
         return topics;
     }
 }
