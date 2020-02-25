@@ -11,13 +11,8 @@ and open the template in the editor.
     box-sizing: border-box;
     display: block;
 }
-.QPaper{
+.Paper{
     display: block;
-    float: left;
-    width: 60%;
-    min-width: 565px;
-    margin-left:  17.8%;
-    margin-top: 70px; 
 }
 .Qid{
     all:none;

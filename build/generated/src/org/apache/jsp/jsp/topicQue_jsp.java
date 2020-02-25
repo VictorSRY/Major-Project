@@ -6,7 +6,7 @@ import javax.servlet.jsp.*;
 import org.apache.catalina.Session;
 import DB.ConnectionDB;
 import java.util.ArrayList;
-import com.victorObj.*;
+import com.victor.Obj.*;
 
 public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -14,6 +14,11 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/JSP/CSS.jsp");
+  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -55,13 +60,23 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"../CSS/topicQue.css\">\r\n");
+      out.write("        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"../CSS/Header.css\">\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"../CSS/SideNab.css\">\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"../CSS/topicQue.css\">\n");
+      out.write("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n");
+      out.write("<script src=\"https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js\"></script>\n");
+      out.write("\r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("    </style>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("    <div class=\"QPaper\">\r\n");
+      out.write("    <div class=\"Paper\">\r\n");
       out.write("        ");
 
             /*String topic =session.getAttribute("topic").toString();*/
@@ -100,7 +115,7 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <label class=\"choiceLabl\">\r\n");
       out.write("                        <input type=\"radio\" name=\"R");
       out.print((i + 1));
-      out.write("\" value=\"a\">\r\n");
+      out.write("\" class=\"choice_input\" value=\"a\">\r\n");
       out.write("                        <div class=\"choice\">\r\n");
       out.write("                            ");
       out.print(q.getA());
@@ -116,7 +131,7 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <label class=\"choiceLabl\">\r\n");
       out.write("                        <input type=\"radio\" name=\"R");
       out.print((i + 1));
-      out.write("\" value=\"b\">\r\n");
+      out.write("\" class=\"choice_input\" value=\"b\">\r\n");
       out.write("                        <div class=\"choice\">\r\n");
       out.write("                            ");
       out.print(q.getB());
@@ -132,7 +147,7 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <label class=\"choiceLabl\">\r\n");
       out.write("                        <input type=\"radio\" name=\"R");
       out.print((i + 1));
-      out.write("\" value=\"c\">\r\n");
+      out.write("\" class=\"choice_input\" value=\"c\">\r\n");
       out.write("                        <div class=\"choice\">\r\n");
       out.write("                            ");
       out.print(q.getC());
@@ -148,7 +163,7 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <label class=\"choiceLabl\">\r\n");
       out.write("                        <input type=\"radio\" name=\"R");
       out.print((i + 1));
-      out.write("\" value=\"d\">\r\n");
+      out.write("\" class=\"choice_input\" value=\"d\">\r\n");
       out.write("                        <div class=\"choice\">\r\n");
       out.write("                            ");
       out.print(q.getD());
@@ -166,8 +181,8 @@ public final class topicQue_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\r\n");
       out.write("    </div>\r\n");
-      out.write("    <button id=\"checkbutton\" onclick=\"checkAns(10)\">Check</button>\r\n");
-      out.write("    <script src=\"../JavaScript/topicQue.js\">");
+      out.write("    <button id=\"checkbutton\">Check</button>\r\n");
+      out.write("    <script src=\"../JavaScript/loltopicQue.js\">");
       out.write("</script>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");

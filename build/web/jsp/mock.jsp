@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>mock Page</title>
     </head>
-    <body><div class="QPaper">
+    <body><div class="Paper">
         <%
             ConnectionDB db = new ConnectionDB();
             Questions[] quesList = db.getMock();

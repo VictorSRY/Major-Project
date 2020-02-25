@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.victor.lol;
+package com.victor.logics;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Lenovo
  */
-@WebServlet(name = "testajaxbuttonservlet", urlPatterns = {"/testajaxbuttonservlet"})
-public class testajaxbuttonservlet extends HttpServlet {
+@WebServlet(name = "TopicSelect", urlPatterns = {"/TopicSelect"})
+public class TopicSelect extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class testajaxbuttonservlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet testajaxbuttonservlet</title>");            
+            out.println("<title>Servlet TopicSelect</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet testajaxbuttonservlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet TopicSelect at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

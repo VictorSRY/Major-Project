@@ -9,14 +9,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%=session.getAttribute("topic").toString()%> Test<!--LOL--></title>
+        <title><%--=session.getAttribute("topic").toString()--%> Test<!--LOL--></title>
         <%@include file="CSS.jsp" %>
+        <style>
+            .center-front{
+                float: left;
+    width: 60%;
+    min-width: 565px;
+    margin-left:  18%;
+    margin-top: 70px; 
+            }
+        </style>
     </head>
     <body>
         <%@include file="Header.jsp" %>
         <%--<div class="front">--%>
             <%@include file="SideNab.jsp"%>
-            <%@include file="topicQue.jsp"%>
+            <div class="center-front">
+                <%@include file="topicQue.jsp"%>
+            </div>
         <%--</div>--%>
     </body>
 </html>

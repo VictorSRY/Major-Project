@@ -7,12 +7,14 @@
 <%@page import="org.apache.catalina.Session"%>
 <%@page import="DB.ConnectionDB"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.victorObj.*"%>
+<%@page import="com.victor.Obj.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <%--
         <%@include file="CSS.jsp" %>
+        --%>
         <%-- <style type="text/css">
             .front{
                 box-sizing: border-box;
@@ -69,7 +71,7 @@
     </style>
 </head>
 <body>
-    <div class="QPaper">
+    <div class="Paper">
         <%
             /*String topic =session.getAttribute("topic").toString();*/
             ConnectionDB cq = new ConnectionDB();

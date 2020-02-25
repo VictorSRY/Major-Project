@@ -90,11 +90,12 @@ public class ConnectionDB {
     }
 
     public Topic[] getTopic(String type) {
+        ResultSet trs;
         ArrayList<Topic> allTopic = new ArrayList<>();
         try {
-            rs = st.executeQuery("select * from " + type);
-            while (rs.next()) {
-                allTopic.add(new Topic(rs.getString(1),rs.getInt(2)));
+            trs = st.executeQuery("select * from " + type);
+            while (trs.next()) {
+                allTopic.add(new Topic(trs.getString(1),trs.getInt(2)));
             }
         } catch (SQLException e) {
             System.out.print(e);

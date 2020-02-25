@@ -5,6 +5,7 @@
  */
 package com.victor.ajax;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -20,8 +21,8 @@ import org.json.simple.JSONObject;
  *
  * @author Lenovo
  */
-@WebServlet(name = "IQVotes", urlPatterns = {"/IQVotes"})
-public class IQVotes extends HttpServlet {
+@WebServlet(name = "testajaxbuttonservlet", urlPatterns = {"/testajaxbuttonservlet"})
+public class testajaxbuttonservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +36,6 @@ public class IQVotes extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,7 +50,7 @@ public class IQVotes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**
@@ -67,13 +64,49 @@ public class IQVotes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id=request.getParameter("id");
-        String action=request.getParameter("Action");
+        System.out.println("start processing");
+        /*
+                    to return text
+         */
+        /*
+        response.setContentType("text/plain");
+        PrintWriter out=response.getWriter();
+        out.write("lol");*/
+        
+                /*
+                    to return json
+                 */
+                /* 
+                frist way to return json using lib gson-2.8.6.jar
+                 */
+                /*
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("lol", true);
+        write(response, map);*/
+                
+                /* 
+                Second way to return json using lib json-simple-1.1.jar
+                 */
+                
+                
         JSONObject jObj=new JSONObject();
-        jObj.put("done", true);
+        jObj.put("id", "lol");
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        response.getWriter().print(jObj.toString());
+        PrintWriter out=response.getWriter();
+        out.write(jObj.toString());
+                
+                /*
+                third way to return json
+                 */
+                
+                /*
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().print("{ \"id\": \"lol\" }");*/ /* =={ "id":"lol" } */
+        
+        System.out.println("complet");
+
     }
 
     /**
@@ -83,7 +116,15 @@ public class IQVotes extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "upVote or downvote";
-    }// </editor-fold>
+        return "testing ajax";
+    }
 
+    private void write(HttpServletResponse response, Map<String, Object> map) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        System.out.println("lol");
+        String str = new Gson().toJson(map);
+        System.out.println(str);
+        response.getWriter().print(str);
+    }// </editor-fold>
 }
