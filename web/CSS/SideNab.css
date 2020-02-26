@@ -25,8 +25,7 @@ a{
     box-shadow: 0px 0px 5px black;
     color:  #2FA4E7;
     margin:5px;
-    margin-top: 70px;
-    position: fixed;
+    margin-top: 10px;
 }
 ul{
 	list-style-type: none;

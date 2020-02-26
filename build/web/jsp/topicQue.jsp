@@ -85,11 +85,12 @@
                 String qn = Integer.toString(i + 1);
                 c[i] = new Cookie("Q" + qn, q.getAns());
         %>
-        <div class="Qid">
+        <div class="Question">
+        <div class="Qid border-top <%--<% if(i==0){%>Paper-top<%}%>--%>">
             Q<%=(i + 1)%>.
             <%-- print value of i+1 --%>
         </div>
-        <div class="question" id="Q<%=(i + 1)%>">
+            <div class="question-text-and-choice border-bottom <%--<% if(i==(limit-1)){%>Paper-bottom<%}%>--%>" id="Q<%=(i + 1)%>">
             <%=q.getQuestion()%><%-- print Question of current object--%>
             <br>
             <br>
@@ -132,6 +133,7 @@
                     </div>
             </div>
         </div> 
+    </div>
         <%
                 response.addCookie(c[i]);
             }
