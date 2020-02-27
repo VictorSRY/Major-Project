@@ -26,7 +26,9 @@ and open the template in the editor.
 .Question{
     border-radius: inherit;
     margin-bottom: 10px;
-    border: 1px solid blue;
+    background-color: white;
+    /*border: 1px solid blue;*/
+    box-shadow: 0px 1px 3px 0px black;
 }
 .Qid{
     all:none;
@@ -34,6 +36,8 @@ and open the template in the editor.
     color: #ffffff;
     padding: 5px;
     padding-left: 6px;
+    border-radius: 7px;
+    border: 3px solid #ffffff;
 }
 .question-text-and-choice{
     background-color: white;
