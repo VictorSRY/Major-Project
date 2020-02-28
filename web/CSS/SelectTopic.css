@@ -1,0 +1,69 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 28, 2020, 10:52:05 PM
+    Author     : Sry
+*/
+
+.topic-types-page{
+    display: flex;
+    flex-direction: column;
+}
+.topic-types{
+    display: flex;
+    flex-direction: column;
+}
+.type{
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    background-color: white;
+    background-color: #ddf0fb;
+    border: inherit;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.type h2{
+    padding: 0px 5px;
+}
+.type-name{
+    text-align: center;
+    border-radius: inherit;
+    background-color: #ddf0fb;
+    color: #00a2ff;
+    /*border: inherit;
+    padding: inherit;*/
+}
+.topics{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: white/*#f3fafe*/;
+    border-radius: inherit;
+    /*border: inherit;
+    padding: inherit;*/
+}
+.topic{
+    display: flex;
+    justify-content: center;
+    background-color: #54b4eb; 
+    margin: 10px;
+    min-width: 150px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: inherit;
+    color: white;
+    /*border: inherit;
+    padding: 5px;*/
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    padding: 5px;
+    border-radius: inherit;
+}

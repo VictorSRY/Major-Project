@@ -12,9 +12,9 @@ package com.victor.Obj;
 public class TopicTypes {
     String type;
     Topic[] topics;
-    public TopicTypes(String type,Topic[] topics){
+    public TopicTypes(String type){
         setType(type);
-        setTopics(topics);
+        /*setTopics(topics);*/
     }
 
     private void setType(String type) {
@@ -23,7 +23,7 @@ public class TopicTypes {
     public String getType() {
         return type;
     }
-    private void setTopics(Topic[] topics) {
+    public void setTopics(Topic[] topics) {
         this.topics = topics;
     }
 

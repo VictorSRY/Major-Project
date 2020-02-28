@@ -73,9 +73,9 @@
 <body>
     <div class="Paper">
         <%
-            /*String topic =session.getAttribute("topic").toString();*/
+            String topic =session.getAttribute("topic").toString();
             ConnectionDB cq = new ConnectionDB();
-            Questions[] quesList = cq.getQues("average"/* topic */);
+            Questions[] quesList = cq.getQues(/*"average"*/ topic );
             /*pass topic*/
             int limit = quesList.length;
             Cookie c[] = new Cookie[limit];
@@ -140,6 +140,9 @@
         %>
     </div>
     <button id="checkbutton">Check</button>
+    <script type="test/JavaScript">
+        var Qno=<%=limit %>;
+    </script>
     <script src="../JavaScript/loltopicQue.js"><%--
         x = document.cookie;
         /*for (var i = x.length - 1; i >= 0; i--) {

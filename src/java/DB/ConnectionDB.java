@@ -45,6 +45,7 @@ public class ConnectionDB {
         return con;
     }*/
     public Questions[] getQues(String topic) throws SQLException {
+        System.out.println("getQue "+topic+" 48");
         ArrayList<Questions> tempQues = new ArrayList<>();
         int qid;
         String question;
@@ -73,29 +74,39 @@ public class ConnectionDB {
     }
 
     public TopicTypes[] getTopicsAndTypes() {
+        System.out.println("lol getTopicAndType"+" 77");
         TopicTypes[] topicsTypes;
         ArrayList<TopicTypes> tempTopics = new ArrayList<>();
         try {
-            rs = st.executeQuery("select * from TopicTypes");
-            while (rs.next()) {
-                String type = rs.getString(1);
-                tempTopics.add(new TopicTypes(type, getTopic(type)));
+            ResultSet rsTopicType = st.executeQuery("select * from TopicTypes");
+            while (rsTopicType.next()) {
+                String type = rsTopicType.getString("Sname");
+                System.out.println(type+" 84");
+                tempTopics.add(new TopicTypes(type));
             }
         } catch (SQLException e) {
-            System.out.print(e);
+            System.out.print(e +"lol 88");
         }
-        topicsTypes = new TopicTypes[tempTopics.size()];
+        int limit=tempTopics.size();
+        for (int i = 0; i < limit; i++) {
+            TopicTypes temp=tempTopics.get(i);
+            System.out.println(temp.getType()+" ");
+            temp.setTopics(getTopic(temp.getType()));
+        }
+        topicsTypes = new TopicTypes[limit];
         topicsTypes = tempTopics.toArray(topicsTypes);
         return topicsTypes;
     }
 
     public Topic[] getTopic(String type) {
-        ResultSet trs;
+        System.out.println("lol getTopic " +type +" 96");
+        ResultSet rsTopic;
         ArrayList<Topic> allTopic = new ArrayList<>();
         try {
-            trs = st.executeQuery("select * from " + type);
-            while (trs.next()) {
-                allTopic.add(new Topic(trs.getString(1),trs.getInt(2)));
+            rsTopic = st.executeQuery("select * from " + type +";");
+            while (rsTopic.next()) {
+                allTopic.add(new Topic(rsTopic.getString("topicName"), rsTopic.getInt("wait")));
+                System.out.println("lol "+rsTopic.getString("topicName")+" "+ rsTopic.getInt("wait"));
             }
         } catch (SQLException e) {
             System.out.print(e);
@@ -106,37 +117,39 @@ public class ConnectionDB {
     }
 
     public Questions[] getMock() throws SQLException {
+        System.out.println("lol getMock");
         ArrayList<Questions> tempQues = new ArrayList<>();
         int qid;
         String question;
         String a, b, c, d, ans;
         boolean rand;
-            TopicTypes[] topics = this.getTopicsAndTypes();
-            int topicsSize = topics.length;
-            for (TopicTypes tt:topics) {
-                for (Topic t:tt.getTopics()){
-                    String name=t.getName();
-                    int wait=t.getWait();
-                    try{
-                        rs = st.executeQuery("SELECT * FROM " + name + " ORDER BY RAND() LIMIT " + wait);
-                        while(rs.next()){
-                            qid = rs.getInt("Qno");
-                            question = rs.getString("Question");
-                            a = rs.getString("a");
-                            b = rs.getString("b");
-                            c = rs.getString("c");
-                            d = rs.getString("d");
-                            ans = rs.getString("ans");
-                            rand = rs.getBoolean("rand");
-                            tempQues.add(new Questions(qid, question, a, b, c, d, ans, rand));
-                        }
+        TopicTypes[] topics = this.getTopicsAndTypes();
+        System.out.println("lol topic sucess 127");
+        int topicsSize = topics.length;
+        for (TopicTypes tt : topics) {
+            for (Topic t : tt.getTopics()) {
+                String name = t.getName();
+                int wait = t.getWait();
+                try {
+                    System.out.println("lol "+name+" 134");
+                    rs = st.executeQuery("SELECT * FROM " + name + " ORDER BY RAND() LIMIT " + wait);
+                    while (rs.next()) {
+                        qid = rs.getInt("Qno");
+                        question = rs.getString("Question");
+                        a = rs.getString("a");
+                        b = rs.getString("b");
+                        c = rs.getString("c");
+                        d = rs.getString("d");
+                        ans = rs.getString("ans");
+                        rand = rs.getBoolean("rand");
+                        tempQues.add(new Questions(qid, question, a, b, c, d, ans, rand));
                     }
-                    catch(SQLException e){
-                        System.out.println(e);
-                    }
+                } catch (SQLException e) {
+                    System.out.println(e);
                 }
             }
-                /*String[] topicNames = topics[i].getTopics();
+        }
+        /*String[] topicNames = topics[i].getTopics();
                 int topicNamesSize = topicNames.length;
                     
         try {
@@ -166,7 +179,7 @@ public class ConnectionDB {
             System.out.print(e);
         }*/
         Questions[] mockQues = new Questions[tempQues.size()];
-        mockQues=tempQues.toArray(mockQues);
+        mockQues = tempQues.toArray(mockQues);
         return mockQues;
     }
 }

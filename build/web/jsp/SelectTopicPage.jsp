@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MockTestPaper
-    Created on : Feb 24, 2020, 2:16:31 AM
+    Document   : SelectTopicPage
+    Created on : Feb 28, 2020, 10:42:47 PM
     Author     : SRY
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mock Test</title>
+        <title>topic select</title>
         <%@include file="CSS.jsp" %>
         <style>
             .center-front{
@@ -18,15 +18,20 @@
                 min-width: 565px;
                 margin:  10px; 
                 padding: 30px;
-                background: #dceef7 /*#014980*/;
+                background: #f3fcf4 /*#014980*/;
             }
         </style>
     </head>
     <body>
         <%@include file="Header.jsp" %>
+        <%--<div class="front">--%>
         <%@include file="SideNab.jsp"%>
         <div class="center-front">
-            <%@include file="mock.jsp"%>
+            <%@include file="Select_Topic.jsp"%>
         </div>
+        <%--</div>--%>
     </body>
 </html>
+
+
+

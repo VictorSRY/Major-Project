@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.victor.lol;
+package com.victor.logics;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author SRVictorY
  */
-@WebServlet(name = "topicSelect", urlPatterns = {"/topicSelect"})
-public class topicSelect extends HttpServlet {
+@WebServlet(name = "Select_Topic", urlPatterns = {"/Select_Topic"})
+public class Select_Topic extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,10 +46,12 @@ public class topicSelect extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String topic = request.getAttribute("topic").toString();
+        System.out.println("hi servelt");
+        String topic = request.getParameter("topic");
+        System.out.println(topic);
         HttpSession session = request.getSession(true);
         session.setAttribute("topic", topic);
-        response.sendRedirect("JSP/TestQuesPage.jsp");
+        response.sendRedirect("JSP/TopicTestPage.jsp");
     }
 
     /**
