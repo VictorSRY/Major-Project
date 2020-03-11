@@ -9,8 +9,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Campus Acticve</title
+        <title>Campus Acticve</title>
         <style type="text/css">
+            .login{/*
+                background: rgba(0,0,0,.3); */
+                /*padding: 20px;
+                padding-top: 10px ;
+                border: 2px;
+                border-style: solid;
+                border-radius: 10px;
+                margin-top: 400px;
+                margin-left: 50%;
+                transform:translateY(-50%) translateX(-50%);
+                text-align: center;
+                width: auto;
+                color: white;
+                display: flex;*/
+            }
             .login form{
                 padding: 20px;
                 padding-top: 10px ;
@@ -85,7 +100,7 @@
     <body>
         <div class="login">
             <form method="POST" action="#">
-                <p class="title"><img height="80px" src="../Images/logo_png1.png"></p>
+                <p class="title"><img height="80px" src="Images/logo_png1.png"></p>
                 <br>
 
                 <input type="text" name="computerCode" placeholder="computerCode"><input type="password" name="password" placeholder="password">
