@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <script src="../JavaScript/jquery-3.4.1.js" type="text/javascript"></script>
+        <script src="JavaScript/jquery-3.4.1.js" type="text/javascript"></script>
         <%--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> --%>
     </head>
     <body>

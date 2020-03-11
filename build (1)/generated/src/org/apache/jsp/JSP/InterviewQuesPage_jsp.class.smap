@@ -1,0 +1,35 @@
+SMAP
+InterviewQuesPage_jsp.java
+JSP
+*S JSP
+*F
++ 0 InterviewQuesPage.jsp
+JSP/InterviewQuesPage.jsp
++ 1 CSS.jsp
+JSP/CSS.jsp
++ 2 Header.jsp
+JSP/Header.jsp
++ 3 SideNab.jsp
+JSP/SideNab.jsp
++ 4 InterviewQues.jsp
+JSP/InterviewQues.jsp
+*L
+5,7:52
+12:59,2
+13:61
+5#1,10:62
+13#0,14:72
+5#2,8:86
+32,11:94
+26#0:104
+27:105,2
+28:107
+5#3,7:108
+68,33:115
+120,3:148
+28#0,3:151
+5#4,210:154
+30#0,2:364
+32:366,2
+33,2:368
+*E

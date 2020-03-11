@@ -7,7 +7,7 @@
 $(document).ready(function(){
 
 	$("#checkbutton").click(function(){
-		for(var i=1; i<=8 ;i++){
+		for(var i=1; i<=$(this).attr('value') ;i++){
 			var user_answer = $("input[name='R"+i+"']:checked").val()
 			console.log(user_answer)
 			var correct_answer = readCookie("Q"+i)

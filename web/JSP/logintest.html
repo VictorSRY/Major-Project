@@ -1,0 +1,113 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-image: linear-gradient(to right,#2700ff,#ff0099)
+		}
+	input {
+		color: white;
+		border: 1px;
+		border-style: solid;
+		border-radius: 4px;
+		background:rgba(255,255,255,.09);
+		padding:5px;
+	}
+	a{
+		text-decoration: none;
+		color:crimson;
+
+	}
+	.mainb{
+
+		background: rgba(0,0,0,.3); 
+		padding: 20px;
+		padding-top: 10px ;
+		border: 2px;
+		border-style: solid;
+		border-radius: 10px;
+		margin-top: 400px;
+		margin-left: 50%;
+		transform:translateY(-50%) translateX(-50%);
+		text-align: center;
+		width: 400px;
+		height: 250px;
+		color: white;
+	}
+	.tab{
+		width: 90%;
+		margin-left:  5%;
+	}
+	.tab tr td{
+		padding-top: 5px;
+	}
+	.button{
+		user-select: none;
+		color: white;
+		width: 30%;
+		padding: 5px;
+		border: 1px;
+		border-style: solid;
+		border-radius: 4px;
+		background: rgba(255,255,255,.1);
+	}
+	.button:hover {
+		background: rgba(255,255,255,.2);
+	}
+	.button:active{
+
+		background: rgba(255,255,255,.3);
+	}
+	select {
+		display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    transition: border-width 0.2s ease;
+    border-radius: 2px;
+    color: #444;
+}
+input{
+	display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    transition: border-width 0.2s ease;
+    border-radius: 2px;
+}
+</style>
+</head>
+<body>
+<div class="mainb">
+	<form method="post" action="firstSession">
+		<H2>Login</H2>
+		<hr>
+		<br>
+		<table class="tab">
+			<tr>
+				<td><input type="text" name="UName"></td>
+			</tr>
+			<tr>
+				<td><input type="Password" name="Password"></td>
+			</tr>
+            <tr>
+            		<td colspan="2"><select id="uType" name="uType">
+  					<option value="Student">Student</option>
+  					<option value="faculties">Faculties</option>
+  					<option value="admin">Admin</option>
+				</select></td>
+			</tr>
+		</table>
+		<br>
+		<button class="button" type="Submit">login</button>
+	</form>
+	<p>Don't have an id ? <a href="SignUp.html">SignUp</a></p>
+</div>
+</body>
+</html>

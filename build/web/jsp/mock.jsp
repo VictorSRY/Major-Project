@@ -82,7 +82,7 @@
             }
         %>
     </div>
-    <button id="checkbutton">Check</button>
-    <script src="../JavaScript/loltopicQue.js">
+        <button id="checkbutton" value="<%=limit%>">Check</button>
+    <script src="../JavaScript/loltopicQue.js"></script>
     </body>
 </html>

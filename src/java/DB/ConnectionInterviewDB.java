@@ -100,9 +100,9 @@ public class ConnectionInterviewDB {
         }
         return true;
     }
-    public boolean addInterviewQuesAns(String ans,int helpfull,int Qid) throws SQLException {
+    public boolean addInterviewQuesAns(String ans,int helpfull,String Qid ,String uid,String uname ,String date) throws SQLException {
         try{
-            int result=ps.executeUpdate("Insert into interviewquesAns (Ans,helpfull,Qid) vlaues('"+ans+"',"+helpfull+",'"+Qid+"');");
+            int result=ps.executeUpdate("Insert into interviewquesAns (Ans,vote,Qid,userid,useName,date) vlaues('"+ans+"',"+helpfull+",'"+Qid+"','"+uid+"','"+uname+"','"+date+"');");
         if(result<1){
                 return false;
             }
@@ -114,3 +114,5 @@ public class ConnectionInterviewDB {
         return true;
     }
 }
+/*
+mysql> ALTER TABLE interviewquesans ADD constraint qid FOREIGN KEY (QId) REFERENCES interviewquestion(Qid);*/

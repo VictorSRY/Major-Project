@@ -139,7 +139,7 @@
             }
         %>
     </div>
-    <button id="checkbutton">Check</button>
+    <button id="checkbutton" value="<%=limit%>">Check</button>
     <script type="test/JavaScript">
         var Qno=<%=limit %>;
     </script>

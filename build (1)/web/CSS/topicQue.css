@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 18, 2020, 11:04:53 PM
+    Author     : SRY
+*/
+.front{
+    box-sizing: border-box;
+    display: block;
+}
+.Paper{
+    display: block;
+    border-radius:4px; 
+}
+.border-top{
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+.border-bottom{
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+.Question{
+    border-radius: inherit;
+    margin-bottom: 10px;
+    background-color: white;
+    /*border: 1px solid blue;*/
+    box-shadow: 0px 1px 3px 0px black;
+}
+.Qid{
+    all:none;
+    background: #879297/* rgba(200,200,200,1)*/;
+    color: #ffffff;
+    padding: 5px;
+    padding-left: 6px;
+    border-radius: 7px;
+    border: 3px solid #ffffff;
+}
+.question-text-and-choice{
+    background-color: white;
+    padding: 10px;
+}
+.choiceLabl {
+    display : block;
+}
+.choiceLabl > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+.choiceLabl > input + .choice{ /* DIV STYLES */
+    cursor:pointer;
+    border:1px solid transparent;
+}
+.choiceLabl > input:checked + .choice{ /* (RADIO CHECKED) DIV STYLES */
+    /*background-color: #ffd6bb;
+    background-color: #178acc75;*/
+    border: 1px solid #95c9e8;
+    box-shadow:inset 0px 0px 5px 2px #95c9e8;
+
+}
+.right{
+    border: 1px solid #2bd231 !important;
+    box-shadow:  inset 0px 0px 5px 2px #2bd231 !important;
+}
+.wrong{
+    border: 1px solid #ff1d1d !important;
+    box-shadow:  inset 0px 0px 5px 2px #ff1d1d !important;
+}
+.choice{
+    padding: 10px;
+    margin-left: 45px;
+    border-radius:12px;
+    box-shadow:inset 0px 0px 5px 0px #b0bec6/*#b1cfdc*/;
+}
+.choiceId{
+    text-align: center;
+    display : inline-block;
+    float: left;
+    padding: 9px 9px 8px 12px;
+    margin-top:2px;
+    /*border:1px solid black;*/
+    box-shadow:inset 0px 0px 5px 0px #b0bec6/*#b1cfdc*/;
+    border-radius: 20px;
+}
+.choiceBlock{
+    margin-bottom: 5px;
+}
+.checkbutton{
+    float: none;
+}
