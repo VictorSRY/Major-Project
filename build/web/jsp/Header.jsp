@@ -4,7 +4,17 @@
     Author     : SRY
 --%>
 
+<%@page import="com.victor.Obj.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+        <%-- User user = (User)session.getAttribute("user"); --%>
+        <%--
+           /* HttpSession testSession=request.getSession(false);*/
+            System.out.println("\n \n \n"+(Boolean)session.getAttribute("logIn"));
+            if((Boolean)session.getAttribute("logIn")){
+                System.out.println("not login");
+                request.getRequestDispatcher("../index.jsp");
+            }
+        --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +45,11 @@
 <header class="Header-nav">
     <div class="logo">
         <img style="max-height: 100%;" src="..\Images\CA_icon.png">
+    </div>
+    <div class="header-user-opt">
+        <%--=user.getUname()--%>
+        <p><input type="hidden" id="uid" value="<%= session.getAttribute("uid") %>"><%=session.getAttribute("uName")%></p>
+        <form method="link" action="../logOut"><button type="submit">logOut</button></form>
     </div>
 </header>
 </body>

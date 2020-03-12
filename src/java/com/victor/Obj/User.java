@@ -11,14 +11,27 @@ package com.victor.Obj;
  */
 public class User {
     private String Uname;
-    private String Uid;
-
-    public User(String Uname, String Uid) {
+    private int Uid;
+    private boolean editRight;
+            
+    public User(String fName,String mName,String lName, int Uid, boolean editRight) {
+        if(mName!=null){
+            mName+=" ";
+        }
+        else{
+            mName="";
+        }
+        String Uname=fName+" "+mName+lName;
         this.Uname = Uname;
         this.Uid = Uid;
+        this.editRight=editRight;
     }
 
-    public String getUid() {
+    public boolean getEditRight(){
+        return editRight;
+    }
+    
+    public int getUid() {
         return Uid;
     }
 

@@ -5,17 +5,21 @@
  */
 package com.victor.logics;
 
+import DB.ConnectionUser;
+import com.victor.Obj.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Lenovo
+ * @author SRY
  */
 @WebServlet(name = "login", urlPatterns = {"/login"})
 public class login extends HttpServlet {
@@ -37,7 +41,7 @@ public class login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet login</title>");            
+            out.println("<title>Servlet login</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet login at " + request.getContextPath() + "</h1>");
@@ -72,7 +76,62 @@ public class login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int cCode = Integer.parseInt(request.getParameter("computerCode"));
+        String password = request.getParameter("password");
+        String type = request.getParameter("type");
+        User user = null;
+        HttpSession session = request.getSession();
+        try {
+            ConnectionUser CU = new ConnectionUser();
+            String fName = "", mName = "", lName = "";
+            ResultSet rs;
+            switch (type) {
+                case "Student":
+                    rs = CU.checkStudent(cCode);
+                    while (rs.next()) {
+                        fName = rs.getString("F_Name");
+                        mName = rs.getString("M_Name");
+                        lName = rs.getString("L_Name");
+                        System.out.println(password + " " + rs.getString("password"));
+                        if (password.equals(rs.getString("password"))) {
+                            user = new User(fName, mName, lName, cCode, false);
+                        } else {
+                            response.sendRedirect("#");
+                        }
+                    }
+                    break;
+                case "Faculties":
+                    rs = CU.checkFaculties(cCode);
+                    while (rs.next()) {
+                        fName = rs.getString("F_Name");
+                        mName = rs.getString("M_Name");
+                        lName = rs.getString("L_Name");
+                        System.out.println(password.equals(rs.getString("password")));
+                        if (password.equals(rs.getString("password"))) {
+                            user = new User(fName, mName, lName, cCode, false);
+
+                        } else {
+                            response.sendRedirect("#");
+                        }
+                    }
+                    break;
+                case "Admin":
+                    if ((cCode == 0614) && (password == "lol")) {
+                        user = new User("Victor", null, "", cCode, true);
+                    } else {
+                        response.sendRedirect("#");
+                    }
+                    break;
+            }
+            /*session.setAttribute("user", user);*/
+            session.setAttribute("uid", cCode);
+            session.setAttribute("uName", user.getUname());
+            session.setAttribute("edit", user.getEditRight());
+            session.setAttribute("logIn", true);
+            response.sendRedirect("JSP/SelectTopicPage.jsp");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     /**

@@ -59,7 +59,25 @@ public class QAndA extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        System.out.println("hi hello honey bunny");
+        if(request.getParameter("type").equals("Ques")){
+            String question = request.getParameter("Question");
+            String uid = request.getParameter("uid");
+            String uname = request.getParameter("uname");
+            String date =request.getParameter("date");
+        }
+        else{
+            String ans = request.getParameter("ans");
+            String qid = request.getParameter("qid");
+            String uid = request.getParameter("uid");
+            String uname = request.getParameter("uName");
+            String date =request.getParameter("date");
+            try {
+            ConnectionInterviewDB cdb=new ConnectionInterviewDB();
+            cdb.addInterviewQuesAns(ans, 0, qid, uid, uname, date);
+        } catch (Exception e) {
+                System.out.println(e);
+        }
     }
 
     /**
@@ -71,26 +89,9 @@ public class QAndA extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+     void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(Boolean.parseBoolean(request.getParameter("type"))){
-            String question = request.getParameter("Question");
-            String uid = request.getParameter("uid");
-            String uname = request.getParameter("uname");
-            String date =request.getParameter("date");
-        }
-        else{
-            String ans = request.getParameter("ans");
-            String qid = request.getParameter("qid");
-            String uid = request.getParameter("uid");
-            String uname = request.getParameter("uname");
-            String date =request.getParameter("date");
-            try {
-            ConnectionInterviewDB cdb=new ConnectionInterviewDB();
-            cdb.addInterviewQuesAns(ans, 0, qid, uid, uname, date);
-        } catch (Exception e) {
-                System.out.println(e);
-        }
+        
         }
         
         response.setContentType("application/json");

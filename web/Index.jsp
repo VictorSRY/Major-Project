@@ -99,15 +99,15 @@
     </head>
     <body>
         <div class="login">
-            <form method="POST" action="#">
+            <form method="POST" action="login">
                 <p class="title"><img height="80px" src="Images/logo_png1.png"></p>
                 <br>
 
                 <input type="text" name="computerCode" placeholder="computerCode"><input type="password" name="password" placeholder="password">
-                <select id="uType" name="uType">
+                <select id="uType" name="type">
                     <option value="Student">Student</option>
-                    <option value="faculties">Faculties</option>
-                    <option value="admin">Admin</option>
+                    <option value="Faculties">Faculties</option>
+                    <option value="Admin">Admin</option>
                 </select>
                 <button type="submit">log in</button>
 

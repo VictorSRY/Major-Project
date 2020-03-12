@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Lenovo
+ * @author SRY
  */
 public class ConnectionInterviewDB {
 
@@ -89,7 +89,8 @@ public class ConnectionInterviewDB {
     }
     public boolean addInterviewQuestion(String Question,int helpfull,InterviewQuesAns[] ansArry,String topicTag) throws SQLException {
         try{
-            int result=ps.executeUpdate("Insert into interviewquestion (Question,helpfull,topicTag) vlaues('"+Question+"',"+helpfull+",'"+topicTag+"');");
+            ps=con.prepareStatement("Insert into interviewquestion (Question,helpfull,topicTag) values('"+Question+"',"+helpfull+",'"+topicTag+"');");
+            int result=ps.executeUpdate();
             if(result<1){
                 return false;
             }
@@ -101,8 +102,12 @@ public class ConnectionInterviewDB {
         return true;
     }
     public boolean addInterviewQuesAns(String ans,int helpfull,String Qid ,String uid,String uname ,String date) throws SQLException {
+        System.out.println("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ");
         try{
-            int result=ps.executeUpdate("Insert into interviewquesAns (Ans,vote,Qid,userid,useName,date) vlaues('"+ans+"',"+helpfull+",'"+Qid+"','"+uid+"','"+uname+"','"+date+"');");
+            String str="Insert into interviewquesans VALUES (NULL,'"+ans+"','"+Qid+"','"+uid+"','"+uname+"','"+helpfull+"','"+date+"');";
+            System.out.println(str);
+            ps=con.prepareStatement(str);
+            int result=ps.executeUpdate();
         if(result<1){
                 return false;
             }
