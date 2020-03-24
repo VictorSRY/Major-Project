@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company</title>
+	<style type="text/css">
+		body{
+			padding: 0px;
+			margin: 0px;
+		}
+		.company-body{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			border: 1px solid black;
+		}
+		.company-body-header{
+			display: flex;
+			border: inherit;
+		}
+		.company-body-header h1{
+			width: 100%;
+		}
+		.company-body-companyList{
+			display: flex;
+			border: inherit;
+		}
+		.company-body-companyList-company{
+			display: flex;
+			flex-direction: column;
+			border: inherit;
+		}
+		.company-body-companyList-company-icoAndDetailContainer{
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			border: inherit;
+		}
+		.company-body-companyList-company-ico{
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			width: 55px;
+			height: 55px;
+			border: inherit;
+		}
+		.company-body-companyList-company-ico a img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		.company-body-companyList-company-NameRatingAndlink{
+			display: flex;
+			flex-direction: column;
+			min-width: 150px;
+			border: inherit;
+		}
+		.company-body-companyList-company-NameRatingAndlink-companyName h3{
+			margin: 0px;
+		}
+		.company-body-companyList-company-NameRatingAndlink-Rating{
+			margin:1px;
+		}
+		.company-body-companyList-company-otherDetails{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			font-size: 11px;
+		}
+		.company-body-companyList-company-otherDetails p{
+		padding: 1px;
+		margin: 1px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="company-body">
+
+		<div class="company-body-header">
+			<h1>Company list</h1>
+		</div>
+
+		<div class="company-body-companyList">
+
+			<div class="company-body-companyList-company">
+
+				<div class="company-body-companyList-company-icoAndDetailContainer">
+
+					<div class="company-body-companyList-company-ico">
+						<a href=""><img src="https://etest.programminggeek.in/assets/images/tcs_logo.png"  alt="<%=companyName %>" height="50px"></a>
+					</div>
+
+					<div class="company-body-companyList-company-NameRatingAndlink">
+
+						<div class="company-body-companyList-company-NameRatingAndlink-companyName">
+							<h3>TCS<!--<%=companyName%>--></h3>
+						</div>
+						<a href="#">tcs.com</a>
+						<p class="company-body-companyList-company-NameRatingAndlink-Rating">rating</p>
+					</div>
+				</div>
+				<div class="company-body-companyList-company-otherDetails">
+					<div class="company-body-companyList-company-otherDetails-jobProfiles">
+						job Profiles
+						<p>2</p>
+					</div>
+					<div class="company-body-companyList-company-otherDetails-avegHire">
+						avg hire
+						<p>
+						30	
+						</p>
+					</div>
+					<div class="company-body-companyList-company-otherDetails-commonPackages">
+						common pack.
+						<p>3.36LpY</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

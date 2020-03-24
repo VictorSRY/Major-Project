@@ -38,7 +38,7 @@ public class QAndA extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet QAndA</title>");            
+            out.println("<title>Servlet QAndA</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet QAndA at " + request.getContextPath() + "</h1>");
@@ -60,23 +60,23 @@ public class QAndA extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("hi hello honey bunny");
-        if(request.getParameter("type").equals("Ques")){
+        if (request.getParameter("type").equals("Ques")) {
             String question = request.getParameter("Question");
             String uid = request.getParameter("uid");
             String uname = request.getParameter("uname");
-            String date =request.getParameter("date");
-        }
-        else{
+            String date = request.getParameter("date");
+        } else {
             String ans = request.getParameter("ans");
             String qid = request.getParameter("qid");
             String uid = request.getParameter("uid");
             String uname = request.getParameter("uName");
-            String date =request.getParameter("date");
+            String date = request.getParameter("date");
             try {
-            ConnectionInterviewDB cdb=new ConnectionInterviewDB();
-            cdb.addInterviewQuesAns(ans, 0, qid, uid, uname, date);
-        } catch (Exception e) {
+                ConnectionInterviewDB cdb = new ConnectionInterviewDB();
+                cdb.addInterviewQuesAns(ans, 0, qid, uid, uname, date);
+            } catch (Exception e) {
                 System.out.println(e);
+            }
         }
     }
 
@@ -89,14 +89,11 @@ public class QAndA extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-     void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        }
-        
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        PrintWriter out=response.getWriter();
+        PrintWriter out = response.getWriter();
         out.write("{sucess : true}");
     }
 

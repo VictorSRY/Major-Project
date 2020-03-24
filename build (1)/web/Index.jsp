@@ -1,7 +1,15 @@
+<%-- 
+    Document   : Index
+    Created on : Mar 12, 2020, 12:53:15 AM
+    Author     : SRY
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>login</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Campus Acticve</title>
         <style type="text/css">
             .login{/*
                 background: rgba(0,0,0,.3); */
@@ -17,14 +25,6 @@
                 width: auto;
                 color: white;
                 display: flex;*/
-                /*border-radius: 2px 2px 5px 5px;
-    padding: 10px 20px 20px 20px;
-    width: 90%;
-    max-width: 320px;
-    background: #ffffff;
-    position: relative;
-    padding-bottom: 80px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);*/
             }
             .login form{
                 padding: 20px;
@@ -51,9 +51,9 @@
                 overflow: visible;
                 box-sizing: border-box;
             }
-        .title{
-            display: block;
-        }
+            .title{
+                display: block;
+            }
             .login input{
                 display: block;
                 padding: 15px 10px;
@@ -99,15 +99,15 @@
     </head>
     <body>
         <div class="login">
-            <form method="POST" action="#">
-                <p class="title"><img height="80px" src="../Images/logo_png1.png"></p>
+            <form method="POST" action="login">
+                <p class="title"><img height="80px" src="Images/logo_png1.png"></p>
                 <br>
 
                 <input type="text" name="computerCode" placeholder="computerCode"><input type="password" name="password" placeholder="password">
-                <select id="uType" name="uType">
+                <select id="uType" name="type">
                     <option value="Student">Student</option>
-                    <option value="faculties">Faculties</option>
-                    <option value="admin">Admin</option>
+                    <option value="Faculties">Faculties</option>
+                    <option value="Admin">Admin</option>
                 </select>
                 <button type="submit">log in</button>
 

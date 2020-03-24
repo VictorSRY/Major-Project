@@ -220,7 +220,7 @@
                                 <input type="file" name="" data-role="media-upload" tabindex="-1" accept="image/*">-->
                                 <div>lol</div>
                                 <div class="text-summit">
-                                    <button id="Submmit-Ans">Submmit</button>
+                                    <button id="Submmit-Ans">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +253,7 @@
             var qid=1;
             var uid=38707;
             $(document).ready(function () {
-                console.log($(".Add-Ans").html())
+                /*console.log($(".Add-Ans").html())*/
                 $("#Submmit-Ans").click(function () {
                     var newAns = $("#Input-Ans").text()
                     console.log(newAns)
