@@ -2,11 +2,258 @@
 <html>
 <head>
 	<title>tcs</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 	<style type="text/css">
-		
+		p{
+			margin: 0px;
+		}
+		h3,h4{
+			margin: 10px 0px;
+		}
+		.companyinfo{
+			display: flex;
+			padding: 5px;
+			flex-direction: column;
+			border: 1px solid black;
+		}
+		.companyinfo-header{
+			display: flex;
+			flex-direction: column;
+			border: 1px solid black;
+			margin-bottom: 10px; 
+		}
+		.companyinfo-header-head{
+			display: flex;
+			flex-direction: column;
+			height: 70px;
+			align-content: center;
+			border: inherit;
+		}
+		.companyinfo-header-head-ico{
+			border: inherit;
+			margin: 10px;
+			max-width: 50px;
+			height:50px;
+			max-height: 50px;
+		}
+		.companyinfo-header-nab{
+			display: flex;
+			flex-direction: row;
+			height: 50px;
+			justify-content: space-around;
+		}
+		.companyinfo-header-nab-option{
+			display: flex;
+			align-items: center;
+			padding: 5px;
+		}
+		.companyinfo-selected{
+			border-bottom: 2px solid red;
+		}
+		.companyinfo-overview{
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			border:1px solid black;
+		}
+		.companyinfo-overview-info-table table {
+			border:1px solid black;
+			width: 100%;
+		}
+		.companyinfo-history{
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			border: 1px solid black;
+		}
+		.companyinfo-productsAndServices{
+			display: flex;
+			padding: 10px;
+			flex-direction: column;
+		}
+		.companyinfo-locations{
+			display: flex;
+			flex-direction: column;
+			padding:5px;
+			border: 1px solid black;
+		}
 	</style>
 </head>
 <body>
+	<div class="companyinfo">
+		<div class="companyinfo-header">
+			<div class="companyinfo-header-head">
+				<div class="companyinfo-header-head-ico">
+					<img src="" alt="name">
+				</div>
+			</div>
+			<div class="companyinfo-header-nab">
+				<div class="companyinfo-header-nab-option">
+					<a href="">about</a>
+				</div>
+				<div class="companyinfo-header-nab-option">
+					<a href="">reviews</a>
+				</div>
+				<div class="companyinfo-header-nab-option">
+					<a href="">jobs</a>
+				</div>
+				<div class="companyinfo-header-nab-option">
+					<a href="">salaries</a>
+				</div>
+				<div class="companyinfo-header-nab-option">
+					<a href="">interviews</a>
+				</div>
+				<div  class="companyinfo-header-nab-option">
+					<a href="">test</a>
+				</div>
+			</div>
+		</div>
+		<div class="companyinfo-overview">
+			<div class="companyinfo-overview-title">
+				<h2>lol</h2>
+			</div>
+			<div class="companyinfo-overview-info">
+				<div class="companyinfo-overview-info-table">
+					<table>
+						<th>
+							<tr></tr>
+							<td></td>
+							<td></td>
+							<td></td>
+						</th>
+						<tr>
+							<td>
+								<label>website</label>
+							</td>
+							<td>
+								<a href="">tcs.com</a>
+							</td>
+							<td>
+								<label>HQ</label>
+							</td>
+							<td>hq-location</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Founded</label>
+							</td>
+							<td>
+								<label>year</label>
+							</td>
+							<td>
+								<label>type</label>
+							</td>
+							<td>
+								<label>
+									SERVICE
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>revenue</label>
+							</td>
+							<td>
+								<label>101</label>
+							</td>
+							<td>
+								<label>indore location</label>
+							</td>
+							<td>
+								<label>yes</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>competitors</label>
+							</td>
+							<td>
+								<label>wipro</label>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<br>
+				<div class="companyinfo-overview-info-infoP">
+					<div data-full="Tata Consultancy Services (TCS) helps its clients say farewell to business inefficiencies. The company is a leading global provider of IT, consulting, and outsourcing services, with operations in more than 40 countries. Its offerings include business process outsourcing, data center management, IT and strategic consulting, new product development and engineering, and systems integration. One of its specialties is developing and maintaining customized software for businesses. Most of its clients, in industries ranging from energy to financial services to retail to telecom, are located in North America, Latin America, and Europe. TCS is controlled by textiles and manufacturing conglomerate Tata Group." class="margTop empDescription" id="infoP"> 
+						Tata Consultancy Services (TCS) helps its clients say farewell to business inefficiencies. The company is a leading global provider of IT, consulting, and outsourcing services, with operations in more than 40 countries. Its offerings include business process outsourcing, data ... <span class="link minor moreLink" id="readMore" style=" cursor: pointer;"><b>Read more</b></span>
+					</div>
+				</div>
+			</div>	
+		</div>
 
+	<div class="companyinfo-history">
+		<h3>History</h3>
+			<p>
+				<b>TATA Consultancy Services Limited (TCS)</b> is an Indian multinational information technology (IT) service and consulting company headquartered in Mumbai, Maharashtra, India. It is a subsidiary of Tata Group and operates in 149 locations across 46 countries.[5]
+				<br>
+				TCS is the largest Indian company by market capitalisation. Tata consultancy services is now placed among the most valuable IT services brands worldwide. In 2015, TCS was ranked 64th overall in the Forbes World's Most Innovative Companies ranking, making it both the highest-ranked IT services company and the top Indian company. It is the world's largest IT services provider. As of 2018, it is ranked eleventh on the Fortune India 500 list.[11] In April 2018, TCS became the first Indian IT company to reach $100 billion market capitalisation, and second Indian company ever (after Reliance Industries achieved it in 2007) after its market capitalisation stood at ₹6,79,332.81 crore ($102.6 billion) on the Bombay Stock Exchange.
+				<br>
+				In 2016–2017, Parent company Tata Sons owned 20% of TCS and more than 70% of Tata Sons' dividends were generated by TCS. In March 2018, Tata Sons decided to sell stocks of TCS worth $1.25 billion in a bulk deal.
+			</p>
+		</div>
+		<div class="companyinfo-locations">
+			<h3>Locations</h3>
+			<p>
+				Tata Consultancy Services has 285 offices across 46 countries and 147 delivery centres in 21 countries.[5] At the same date TCS had a total of 58 subsidiary companies.
+				<br>
+				<br>
+				TCS has operations in the following locations:
+				<br>
+				<br>
+				<b>India:</b> Ahmedabad, Bengaluru, Baroda, Bhubaneswar, Chennai, Coimbatore, Delhi, Gandhinagar, Goa, Gurugram, Guwahati, Hyderabad, Bhopal, Indore, Jamshedpur, Kochi, Kolkata, Lucknow, Mumbai, Nagpur, Noida, Nashik, Patna,[80][81] Pune, Trivandrum, and Varanasi
+				<br>
+				<br>
+				<b>Asia (excluding India):</b> Bahrain, China, Israel, UAE, Hong Kong, Indonesia, Japan, Malaysia, Philippines, Saudi Arabia, Singapore, South Korea, Taiwan, Thailand, and Qatar [82][83][84]
+				<br>
+				<br>
+				<b>Oceania:</b> Australia
+				<br>
+				<br>
+				<b>Africa:</b> South Africa, Morocco (closed)[85][86]
+				<br>
+				<br>
+				<b>Europe:</b> Belgium, Denmark, Finland, France, Germany, Hungary, Iceland, Republic of Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Spain, Sweden, Switzerland, and United Kingdom.
+				<br>
+				<br>
+				<b>North America:</b> Canada, Mexico, and United States.
+				<br>
+				<br>
+				<b>South America:</b> Argentina, Brazil, Chile, Colombia, Ecuador, Peru, and Uruguay.[87]
+			</p>
+
+		</div>
+		<div class="companyinfo-productsAndServices">
+			<h3>Products and services</h3>
+			<p>
+				TCS and its 67 subsidiaries[76] provides a wide range of information technology-related products and services including application development, business process outsourcing, capacity planning, consulting, enterprise software, hardware sizing, payment processing, software management and technology education services.[77] The firm's established software products are TCS BaNCS and TCS MasterCraft.[78]
+				<h4>Service lines</h4>
+				TCS' services are currently organised into the following service lines (percentage of total TCS revenues in the 2012-13 financial year generated by each respective service line is shown in parentheses):
+				<br>
+			</p>
+			<br>
+			<ul style="margin: 0 0 0 0px;">
+				<li>Application development and maintenance (43.80%) value</li>
+				<li>Asset leverage solutions(2.70%)</li>
+				<li>Assurance services (7.70%)</li>
+				<li>Business process outsourcing (12.50%)</li>
+				<li>Consulting (2.00%)</li>
+				<li>Engineering and Industrial services (4.60%)</li>
+				<li>Enterprise solution (15.21%)</li>
+				<li>IT infrastructure services (11.50%).</li>
+				<li>Cognitive Business Operations</li>
+			</ul>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		$(document).ready($('#readMore').click(function(){
+			console.log($("#infoP").attr('data-full'))
+				$("#infoP").text($("#infoP").attr('data-full'))
+			})
+)
+	</script>
 </body>
 </html>

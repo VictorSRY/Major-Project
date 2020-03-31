@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company</title>
+	<style type="text/css">
+		body{
+			padding: 0px;
+			margin: 0px;
+		}
+		.company-body{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			border: 1px solid black;
+		}
+		.company-body-header{
+			display: flex;
+			border: inherit;
+		}
+		.company-body-header h1{
+			width: 100%;
+		}
+		.company-body-companyList{
+			display: flex;
+			border: inherit;
+		}
+		.company-body-companyList-company{
+			display: flex;
+			border: inherit;
+		}
+		.company-body-companyList-company-ico{
+			display: flex;
+			border: inherit;
+		}
+		.company-body-companyList-company-details{
+			display: flex;
+			flex-direction: column;
+			min-width: 150px;
+			border: inherit;
+		}
+		.company-body-companyList-company-details-companyName h3{
+			margin: 2px;
+		}
+		.company-body-companyList-company-details-reviewAndRating p{
+			margin:1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="company-body">
+		<div class="company-body-header">
+			<h1>Company list</h1>
+		</div>
+		<div class="company-body-companyList">
+			<div class="company-body-companyList-company">
+				<div class="company-body-companyList-company-ico">
+					<a href=""><img src="https://etest.programminggeek.in/assets/images/tcs_logo.png"  alt="<%=companyName %>" height="50px"></a>
+				</div>
+				<div class="company-body-companyList-company-details">
+					<div class="company-body-companyList-company-details-companyName">
+						<h3>TCS<!--<%=companyName%>--></h3>
+					</div>
+					<div class="company-body-companyList-company-details-reviewAndRating">
+						<p class="company-body-companyList-company-details-reviewAndRating-">rating</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
