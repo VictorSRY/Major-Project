@@ -31,7 +31,7 @@ public class ConnectionInterviewDB {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("driver lol");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/placementtalksInterview", "root", "root");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/placementtalksqanda", "root", "root");
             System.out.println("db lol");
             /*ps=con.prepareStatement("");*/
             st = con.createStatement();
@@ -108,6 +108,7 @@ public class ConnectionInterviewDB {
             System.out.println(str);
             ps=con.prepareStatement(str);
             int result=ps.executeUpdate();
+            System.out.println(result);
         if(result<1){
                 return false;
             }

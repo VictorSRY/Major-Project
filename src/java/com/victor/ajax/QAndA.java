@@ -78,6 +78,11 @@ public class QAndA extends HttpServlet {
                 System.out.println(e);
             }
         }
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.write("{sucess : true}");
+        System.out.println("complet");
     }
 
     /**
@@ -91,10 +96,30 @@ public class QAndA extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println(" POST hi hello honey bunny");
+        if (request.getParameter("type").equals("Ques")) {
+            String question = request.getParameter("Question");
+            String uid = request.getParameter("uid");
+            String uname = request.getParameter("uname");
+            String date = request.getParameter("date");
+        } else {
+            String ans = request.getParameter("ans");
+            String qid = request.getParameter("qid");
+            String uid = request.getParameter("uid");
+            String uname = request.getParameter("uName");
+            String date = request.getParameter("date");
+            try {
+                ConnectionInterviewDB cdb = new ConnectionInterviewDB();
+                cdb.addInterviewQuesAns(ans, 0, qid, uid, uname, date);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        out.write("{sucess : true}");
+        out.write("{\"success\" : \"true\"}");
+        System.out.println("complet");
     }
 
     /**

@@ -105,7 +105,7 @@ public class testajaxbuttonservlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.getWriter().print("{ \"id\": \"lol\" }");*/ /* =={ "id":"lol" } */
         
-        System.out.println("complet");
+        System.out.println("complet"+jObj.toString());
 
     }
 

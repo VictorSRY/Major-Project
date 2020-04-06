@@ -267,10 +267,11 @@
                     else {
                         $.ajax({
                             url: "../QAndA",
-                            action: "Post",
+                            type: "POST",
                             dataType: "json",
                             data: {"type":"ans","qid":qid,"uid":uid,"uName":"Victor","ans": newAns,"date":dbDate},
-                            sucess: function () {
+                            success: function (data) {
+                                console.log("success")
                                 var tempHtml = $(".Ans").html()
                                 $("#top-ans").after("<div class=\"Ans\" id = \"your-Ans\"><div class=\"ansText\"><p>" + newAns + "</p></div><div class=\"aAttribute\"><div class=\"AvoteSys\"><button class=\"Up\">\\</button><p id=\"qS\">123</p><button class=\"notSoUp\">/</button></div><div class=\"aInfo\"><span class=\"test\" style=\" vertical-align: middle;   color: black;  font-size: 10px;  line-height: 20px;margin: 0 4px; \" role=\"presentation\">•</span>Posted by : " + uname + "  <l style=\"\">" +getDate()+ "</l></div></div></div>"/*tempHtml*/)
                                 $(".Add-Ans").remove()
